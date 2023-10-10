@@ -26,12 +26,12 @@ int main(void){
     print_command_prompt();
     char* command = read_and_save_command();
 
-  //Elternprozess
+  //Eltern-Prozess
     if (fork() > 0){
       int status;
       wait(&status);
     }
-  //Kindprozess
+  //Kind-Prozess
     else{
       char *argv[] = {command, NULL};
       char *envp[] = {NULL};
