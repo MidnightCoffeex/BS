@@ -7,17 +7,17 @@
 
 void print_command_prompt(){
   printf("myShell>");
-
 }
 
-
 char* read_and_save_command(){
-  char* command = (char*)malloc(256);
+  char temp_command[256];
+  char* command = (char*)malloc(256 + 5);
   if(command == NULL){
     perror("malloc");
     exit(EXIT_FAILURE);
   }
-  scanf("%255s", command);
+  scanf("%255s", temp_command);
+  sprintf(command, "/bin/%s", temp_command);
   return command;
 }
 
