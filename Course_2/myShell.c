@@ -17,7 +17,8 @@ char* read_and_save_command(){
     exit(EXIT_FAILURE);
   }
   scanf("%255s", temp_command);
-  sprintf(command, "/bin/%s", temp_command);
+  // '/bin/' hinzufügen, weil ich keine lust drauf habe es zu Tippen
+  sprintf(command, "/bin/%s", temp_command); 
   return command;
 }
 
